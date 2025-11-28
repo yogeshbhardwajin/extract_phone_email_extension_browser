@@ -1,155 +1,153 @@
-# Data Extractor Chrome Extension
+# 📱 Phone/Email Extractor – Fully Free & Unlimited 🚀
 
-A powerful Chrome extension that automatically detects and collects unique phone numbers and email addresses from web pages with rich context information.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+![Platform](https://img.shields.io/badge/platform-Chrome%20Extension-googlechrome.svg)
 
-## Features
+**The ultimate free Chrome Extension for lead generation.**  
+Extract valid phone numbers and email IDs from any website.  
+No limits, no hidden charges, no login — **100% free & unlimited**.
 
-### 🔍 Comprehensive Data Extraction
-- **Unique Detection**: Automatically identifies unique phone numbers and email addresses
-- **Deep Scanning**: Scans all page elements including:
-  - Visible text content
-  - Hidden elements (buttons, inputs, code blocks)
-  - HTML attributes (data-*, href, value, placeholder, title, alt, etc.)
-  - `mailto:` and `tel:` links
-  - Form fields and textareas
-  - Code blocks (`<code>`, `<pre>`)
+---
 
-### 📊 Rich Data Context
-Each extracted item includes:
-- **Value**: The email or phone number
-- **Context**: Nearby text that provides context (labels, parent text, aria-labels)
-- **URL**: The page where it was found
-- **Timestamp**: When it was detected (ISO 8601 format)
+## 📋 Table of Contents
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Installation](#installation)
+- [How to Use](#how-to-use)
+- [Configuration](#configuration)
+- [Privacy & Security](#privacy--security)
+- [SEO Keywords](#seo-keywords)
+- [Contributing](#contributing)
+- [License](#license)
 
-### 💾 Persistent Storage
-- Data is saved and remembered until manually cleared
-- Survives browser restarts
-- Works across multiple tabs
+---
 
-### 🎯 Real-time UI Feedback
-- **Bottom-right panel** shows:
-  - Current extraction status
-  - Total count of collected items
-  - Check icon animation when new data is detected
+## 📖 Overview
+**Phone/Email Extractor Fully Free Unlimited Access** is a lightweight Chrome extension designed for salespeople, marketers, and recruiters.
 
-### 🎛️ Popup Interface
-- **Start/Stop Control**: Toggle extraction on/off
-- **Live Statistics**: Separate counts for emails and phones
-- **Data Preview**: View collected items with context
-- **CSV Export**: Download all data with full details
-- **Clear Data**: Reset storage with one click
+Unlike paid tools, this extension provides:
 
-### 📥 CSV Export
-Download includes all fields:
-- Type (email/phone)
-- Value
-- Context (nearby text)
-- URL (source page)
-- Timestamp
+- **Unlimited extraction**
+- **Fast scanning**
+- **Smart filtering**
+- **Local processing** (your data stays on your device)
 
-## Installation
+It automatically filters out junk like dates, prices, and random code.
 
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable **Developer mode** (toggle in top-right corner)
-3. Click **Load unpacked**
-4. Select the `data_extractor` directory
-5. Pin the extension to your toolbar for easy access
+---
 
-## Usage
+## 🌟 Key Features
 
-1. **Start Extraction**:
-   - Click the extension icon
-   - Click "Start Extraction" button
-   - A panel will appear in the bottom-right corner
+### ✔ Unlimited Extraction  
+Extract as much data as you want — **no credit limits**.
 
-2. **Browse the Web**:
-   - The extension automatically scans pages as you browse
-   - Watch the counter increase as unique items are found
-   - Check icon flashes when new data is detected
+### ✔ Smart Detection
+- **Phone Numbers:** Detects various formats, can filter by digit count.  
+- **Emails:** Uses accurate regex to catch valid emails.
 
-3. **View Collected Data**:
-   - Click the extension icon to see statistics
-   - Preview recent items with context
-   - See separate counts for emails and phones
+### ✔ Junk Filter (Code Guard)
+Filters out:
+- JSON  
+- JavaScript code  
+- IPs  
+- Dates  
+- Prices  
+- Log strings  
 
-4. **Export Data**:
-   - Click "Download CSV" to export all data
-   - File includes: Type, Value, Context, URL, Timestamp
+### ✔ Works on Dynamic Websites  
+Uses **MutationObserver** to detect phone/emails on React, Vue, Angular pages while scrolling.
 
-5. **Clear Data**:
-   - Click "Clear Data" to reset storage
-   - Confirmation not required (be careful!)
+### ✔ One-Click Export  
+Download extracted contacts in **CSV format**.
 
-6. **Stop Extraction**:
-   - Click "Stop Extraction" to pause scanning
-   - Data remains saved
+### ✔ Visual Counter  
+Shows count of collected phone numbers & emails.
 
-## Technical Details
+### ✔ WhatsApp & Tel Support  
+Captures special links like:
+- `tel:`
+- `wa.me`
 
-### Regex Patterns
-- **Email**: `/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g`
-- **Phone**: `/(?:\+?\d{1,3}[ -]?)?\(?\d{3}\)?[ -]?\d{3}[ -]?\d{4}/g`
+---
 
-### Context Extraction
-The extension intelligently extracts context by:
-1. Checking for associated labels (form elements)
-2. Extracting nearby parent text (up to 100 chars)
-3. Using aria-label or title attributes
-4. Limiting context to prevent data bloat
+## 🔧 Installation
 
-### Storage
-- Uses Chrome's `chrome.storage.local` API
-- Serialized saving prevents race conditions
-- No storage limits imposed by extension
+### ⭐ Chrome Web Store  
+*(Add link once published)*
 
-### Performance
-- Efficient MutationObserver for dynamic content
-- Deduplication using Set data structure
-- Background script handles concurrent saves
-
-## File Structure
-
-```
-data_extractor/
-├── manifest.json          # Extension configuration
-├── background.js          # Service worker for data management
-├── content.js            # Content script for page scanning
-├── content.css           # Styles for injected UI
-├── popup.html            # Extension popup interface
-├── popup.js              # Popup logic
-├── popup.css             # Popup styles
-└── icons/                # Extension icons
-    ├── icon16.png
-    ├── icon48.png
-    └── icon128.png
+### Manual Installation (Developer Mode)
+```bash
+git clone https://github.com/yogeshbhardwajin/extract_phone_email_extension_browser.git
 ```
 
-## Privacy & Security
+1. Open Chrome → `chrome://extensions/`  
+2. Enable **Developer mode**  
+3. Click **Load unpacked**  
+4. Select the extension folder  
 
-- **No external servers**: All data stays local in your browser
-- **No tracking**: Extension doesn't send data anywhere
-- **Manual control**: You control when extraction starts/stops
-- **Local storage only**: Data stored using Chrome's secure storage API
+---
 
-## Limitations
+## 🚀 How to Use
 
-- Phone regex may need adjustment for international formats
-- Context extraction limited to 100 characters
-- Requires page reload for content scripts on existing tabs (first install)
+1. Click the extension icon  
+2. Press **Start**  
+3. Scroll or browse — extraction happens automatically  
+4. Adjust settings (phone/email toggles, digit length)  
+5. Click **Download CSV** to export leads  
 
-## Future Enhancements
+---
 
-- Custom regex patterns
-- Filter by domain
-- Export to JSON
-- Import/merge data
-- Advanced search and filtering
-- Duplicate detection across similar formats
+## ⚙️ Configuration
 
-## License
+- **Email / Phone Toggles:** Extract one or both  
+- **Min/Max Digit Length:** Avoids wrong numbers  
+  - Example: Set both to **10** (India/US 10-digit numbers)
 
-MIT License - Feel free to modify and distribute
+---
 
-## Support
+## 🛡 Privacy & Security
 
-For issues or feature requests, please contact the developer.
+- All processing happens **locally**  
+- No cloud uploads  
+- No tracking  
+- No browsing history collection  
+
+---
+
+## 🗝 SEO Keywords
+
+- Free Email Extractor Chrome Extension  
+- Phone Number Scraper  
+- Unlimited Lead Generation Tool  
+- Website Contact Extractor  
+- Bulk Email Scraper  
+- WhatsApp Number Extractor  
+- Chrome Extension for Sales  
+- Data Mining Tool JavaScript  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork repo  
+2. Create branch:  
+   ```bash
+   git checkout -b feature/MyFeature
+   ```
+3. Commit changes  
+4. Push branch  
+5. Open Pull Request  
+
+---
+
+## 📄 License
+Distributed under the **MIT License**.  
+See `LICENSE` for details.
+
+---
+
+### ⚠️ Disclaimer  
+Use responsibly. Follow website Terms of Service and privacy laws (GDPR/CCPA).
